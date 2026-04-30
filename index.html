@@ -1,0 +1,650 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark light">
+  <meta name="description" content="Official support, privacy policy, FAQ, and contact information for Anstogo.">
+  <title>Anstogo Support</title>
+  <style>
+    :root {
+      --bg: #050506;
+      --surface: #171718;
+      --surface-2: #202022;
+      --text: #f2f2f7;
+      --muted: #a7a7ad;
+      --soft: #77777f;
+      --border: #303033;
+      --accent: #f2f2f7;
+      --shadow: rgba(255, 255, 255, 0.06);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(255,255,255,0.08), transparent 30rem),
+        linear-gradient(180deg, #070708 0%, var(--bg) 42rem);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: var(--accent);
+      font-weight: 750;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 4px;
+    }
+
+    .wrap {
+      width: min(1040px, 100%);
+      margin: 0 auto;
+      padding: 22px;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(18px);
+      background: rgba(5, 5, 6, 0.74);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      min-height: 68px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    .mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      background: linear-gradient(145deg, #2b2b2d, #0f0f10);
+      border: 1px solid var(--border);
+      display: grid;
+      place-items: center;
+      box-shadow: 0 12px 32px var(--shadow);
+    }
+
+    .mark span {
+      font-size: 21px;
+      font-weight: 950;
+      line-height: 1;
+    }
+
+    .brand-text {
+      display: grid;
+      gap: 0;
+    }
+
+    .brand-title {
+      font-size: 16px;
+      font-weight: 850;
+      line-height: 1.1;
+    }
+
+    .brand-subtitle {
+      color: var(--soft);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+    }
+
+    .navlinks {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .navlinks a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 750;
+    }
+
+    .navlinks a:hover {
+      color: var(--text);
+    }
+
+    .language-picker {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      min-height: 40px;
+      padding: 0 13px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: rgba(23, 23, 24, 0.88);
+      color: var(--text);
+      box-shadow: 0 16px 46px var(--shadow);
+    }
+
+    .language-picker label {
+      font-size: 13px;
+      font-weight: 800;
+      color: var(--muted);
+    }
+
+    select {
+      appearance: none;
+      border: 0;
+      outline: 0;
+      background: transparent;
+      color: var(--text);
+      font: inherit;
+      font-size: 14px;
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    option {
+      color: #111;
+    }
+
+    main {
+      padding: 50px 0 64px;
+    }
+
+    .hero {
+      display: grid;
+      gap: 24px;
+      padding: 54px 0 44px;
+    }
+
+    .eyebrow {
+      width: fit-content;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: rgba(255,255,255,0.04);
+      color: var(--muted);
+      padding: 7px 12px;
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    h1 {
+      max-width: 760px;
+      font-size: clamp(42px, 8vw, 76px);
+      line-height: 0.98;
+      margin: 0;
+      letter-spacing: 0;
+    }
+
+    .lead {
+      max-width: 720px;
+      margin: 0;
+      color: var(--muted);
+      font-size: clamp(17px, 2.5vw, 20px);
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 4px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 0 17px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: var(--accent);
+      color: #050506;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 850;
+    }
+
+    .button.secondary {
+      background: rgba(255,255,255,0.04);
+      color: var(--text);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+      margin: 18px 0 44px;
+    }
+
+    .grid.three {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    section,
+    .card {
+      background: rgba(23, 23, 24, 0.94);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 24px;
+      box-shadow: 0 22px 70px rgba(0,0,0,0.16);
+    }
+
+    section {
+      margin-top: 16px;
+      scroll-margin-top: 90px;
+    }
+
+    .full {
+      grid-column: 1 / -1;
+    }
+
+    h2 {
+      font-size: clamp(24px, 4vw, 34px);
+      line-height: 1.08;
+      margin: 0 0 14px;
+      letter-spacing: 0;
+    }
+
+    h3 {
+      font-size: 17px;
+      line-height: 1.25;
+      margin: 0 0 8px;
+      letter-spacing: 0;
+    }
+
+    p {
+      margin: 0 0 12px;
+      color: var(--muted);
+    }
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 20px;
+      color: var(--muted);
+    }
+
+    li + li {
+      margin-top: 8px;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      min-height: 38px;
+      padding: 8px 13px;
+      border-radius: 999px;
+      background: var(--surface-2);
+      color: var(--text);
+      border: 1px solid var(--border);
+      font-size: 14px;
+      font-weight: 760;
+    }
+
+    .small {
+      color: var(--soft);
+      font-size: 13px;
+    }
+
+    footer {
+      margin-top: 30px;
+      color: #73737a;
+      font-size: 13px;
+    }
+
+    @media (max-width: 840px) {
+      .nav {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .navlinks {
+        width: 100%;
+        overflow-x: auto;
+        padding-bottom: 4px;
+      }
+
+      .grid,
+      .grid.three {
+        grid-template-columns: 1fr;
+      }
+
+      main {
+        padding-top: 24px;
+      }
+
+      .hero {
+        padding-top: 30px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="wrap nav">
+      <a class="brand" href="#top" aria-label="Anstogo">
+        <div class="mark" aria-hidden="true"><span>A</span></div>
+        <span class="brand-text">
+          <span class="brand-title">Anstogo</span>
+          <span class="brand-subtitle" data-i18n="brandSubtitle">Support Center</span>
+        </span>
+      </a>
+
+      <div class="navlinks">
+        <a href="#support" data-i18n="navSupport">Support</a>
+        <a href="#faq" data-i18n="navFaq">FAQ</a>
+        <a href="#privacy" data-i18n="navPrivacy">Privacy</a>
+        <a href="#subscription" data-i18n="navSubscription">Subscription</a>
+        <a href="#data" data-i18n="navData">Data</a>
+      </div>
+
+      <div class="language-picker">
+        <label for="language" data-i18n="languageLabel">Language</label>
+        <select id="language" aria-label="Language">
+          <option value="en">English</option>
+          <option value="zh-Hans">简体中文</option>
+          <option value="es">Español</option>
+          <option value="fr">Français</option>
+          <option value="de">Deutsch</option>
+          <option value="ja">日本語</option>
+          <option value="ko">한국어</option>
+          <option value="pt">Português</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <main id="top" class="wrap">
+    <section class="hero">
+      <p class="eyebrow" data-i18n="eyebrow">Official support for Anstogo</p>
+      <h1 data-i18n="title">Turn blocked app time into study time.</h1>
+      <p class="lead" data-i18n="lead">
+        Anstogo helps users stay focused by locking distracting apps or websites and requiring study questions before temporary access is unlocked.
+      </p>
+      <div class="cta-row">
+        <a class="button" href="mailto:support@anstogo.com" data-i18n="emailButton">Email Support</a>
+        <a class="button secondary" href="#privacy" data-i18n="privacyButton">Privacy Policy</a>
+      </div>
+    </section>
+
+    <div class="grid three">
+      <div class="card">
+        <h3 data-i18n="feature1Title">Screen Time Locking</h3>
+        <p data-i18n="feature1Text">Use iOS Screen Time support to restrict selected apps, categories, or websites.</p>
+      </div>
+      <div class="card">
+        <h3 data-i18n="feature2Title">Study to Unlock</h3>
+        <p data-i18n="feature2Text">Complete questions from your selected question bank to earn temporary unlock time.</p>
+      </div>
+      <div class="card">
+        <h3 data-i18n="feature3Title">Progress Review</h3>
+        <p data-i18n="feature3Text">Review mistakes, study time, question results, and performance insights.</p>
+      </div>
+    </div>
+
+    <section id="support">
+      <h2 data-i18n="supportTitle">Support</h2>
+      <div class="grid">
+        <div>
+          <h3 data-i18n="contactTitle">Contact</h3>
+          <p data-i18n="contactIntro">If you need help with Anstogo, please contact us by email.</p>
+          <p><a href="mailto:support@anstogo.com">support@anstogo.com</a></p>
+          <p data-i18n="responseTime">We usually respond within 2 business days.</p>
+        </div>
+        <div>
+          <h3 data-i18n="appInfoTitle">App Information</h3>
+          <p><span class="pill" data-i18n="appName">App: Anstogo</span></p>
+          <p><span class="pill" data-i18n="developer">Developer: Huang Xuanning</span></p>
+          <p><span class="pill" data-i18n="platforms">Platforms: iOS and Android</span></p>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq">
+      <h2 data-i18n="faqTitle">Frequently Asked Questions</h2>
+      <div class="grid">
+        <div class="card">
+          <h3 data-i18n="faq1Title">Why do I need Screen Time permission?</h3>
+          <p data-i18n="faq1Text">On iOS, Anstogo uses Apple Screen Time related APIs to apply restrictions to apps, categories, or websites you select.</p>
+        </div>
+        <div class="card">
+          <h3 data-i18n="faq2Title">How do I unlock an app?</h3>
+          <p data-i18n="faq2Text">Open the unlock challenge from Anstogo or from the lock screen flow, answer the required questions, and temporary access will be granted.</p>
+        </div>
+        <div class="card">
+          <h3 data-i18n="faq3Title">Can I choose difficulty?</h3>
+          <p data-i18n="faq3Text">Yes. You can select a difficulty band or choose random difficulty in Settings.</p>
+        </div>
+        <div class="card">
+          <h3 data-i18n="faq4Title">What is Independent Lock?</h3>
+          <p data-i18n="faq4Text">Independent Lock unlocks only the specific app you challenged for. Other locked apps remain restricted.</p>
+        </div>
+        <div class="card">
+          <h3 data-i18n="faq5Title">What is Heteronomy Mode?</h3>
+          <p data-i18n="faq5Text">When enabled, users cannot manually unlock apps from the locked app list, helping reduce impulsive bypassing.</p>
+        </div>
+        <div class="card">
+          <h3 data-i18n="faq6Title">Why are Pro features unavailable?</h3>
+          <p data-i18n="faq6Text">Reopen Anstogo, make sure you are signed in with the same account, and check your subscription status in Settings.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="privacy">
+      <h2 data-i18n="privacyTitle">Privacy Policy</h2>
+      <p class="small" data-i18n="effectiveDate">Effective date: April 29, 2026</p>
+      <div class="grid">
+        <div class="card">
+          <h3 data-i18n="privacy1Title">Data We May Process</h3>
+          <p data-i18n="privacy1Text">Anstogo may process account information, app settings, selected question banks, study progress, mistakes, subscription status, and support emails you send to us.</p>
+        </div>
+        <div class="card">
+          <h3 data-i18n="privacy2Title">Screen Time Data</h3>
+          <p data-i18n="privacy2Text">On iOS, app and website restrictions are handled through Apple Screen Time related APIs. We use this information only to provide locking and unlocking features.</p>
+        </div>
+        <div class="card">
+          <h3 data-i18n="privacy3Title">How We Use Data</h3>
+          <p data-i18n="privacy3Text">We use data to operate core app features, sync account status, provide Pro access, improve reliability, respond to support requests, and prevent abuse.</p>
+        </div>
+        <div class="card">
+          <h3 data-i18n="privacy4Title">Purchases</h3>
+          <p data-i18n="privacy4Text">In-app purchases are processed by Apple or Google. We receive purchase status information needed to unlock subscription features, but we do not receive full payment card details.</p>
+        </div>
+        <div class="card">
+          <h3 data-i18n="privacy5Title">Children</h3>
+          <p data-i18n="privacy5Text">Anstogo is a productivity and study tool. If you believe a child has provided personal information without appropriate consent, contact us so we can help remove it.</p>
+        </div>
+        <div class="card">
+          <h3 data-i18n="privacy6Title">Contact About Privacy</h3>
+          <p data-i18n="privacy6Text">For privacy questions, corrections, or deletion requests, contact support@anstogo.com.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="subscription">
+      <h2 data-i18n="subscriptionTitle">Subscription and Pro Features</h2>
+      <div class="grid">
+        <div class="card">
+          <h3 data-i18n="sub1Title">Pro Access</h3>
+          <p data-i18n="sub1Text">Pro may include advanced explanations, analysis, tips, and other premium study features shown in the app.</p>
+        </div>
+        <div class="card">
+          <h3 data-i18n="sub2Title">Billing and Cancellation</h3>
+          <p data-i18n="sub2Text">Subscriptions are managed by the platform where you purchased them. On iOS, you can manage or cancel subscriptions in your Apple ID subscription settings.</p>
+        </div>
+        <div class="card full">
+          <h3 data-i18n="sub3Title">Refunds</h3>
+          <p data-i18n="sub3Text">Refunds for App Store purchases are handled by Apple. If you need a refund, please use Apple’s official report-a-problem flow.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="data">
+      <h2 data-i18n="dataTitle">Account and Data Requests</h2>
+      <div class="grid">
+        <div class="card">
+          <h3 data-i18n="data1Title">Request Data Deletion</h3>
+          <p data-i18n="data1Text">To request deletion of account-related data, email support@anstogo.com from the email address associated with your account.</p>
+        </div>
+        <div class="card">
+          <h3 data-i18n="data2Title">Local Data</h3>
+          <p data-i18n="data2Text">Some settings, imported files, study records, and cached data may be stored on your device. You can remove local app data by deleting Anstogo from your device.</p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p data-i18n="copyright">© 2026 Huang Xuanning. All rights reserved.</p>
+    </footer>
+  </main>
+
+  <script>
+    const translations = {
+      en: {
+        brandSubtitle: "Support Center", navSupport: "Support", navFaq: "FAQ", navPrivacy: "Privacy", navSubscription: "Subscription", navData: "Data", languageLabel: "Language",
+        eyebrow: "Official support for Anstogo", title: "Turn blocked app time into study time.", lead: "Anstogo helps users stay focused by locking distracting apps or websites and requiring study questions before temporary access is unlocked.", emailButton: "Email Support", privacyButton: "Privacy Policy",
+        feature1Title: "Screen Time Locking", feature1Text: "Use iOS Screen Time support to restrict selected apps, categories, or websites.", feature2Title: "Study to Unlock", feature2Text: "Complete questions from your selected question bank to earn temporary unlock time.", feature3Title: "Progress Review", feature3Text: "Review mistakes, study time, question results, and performance insights.",
+        supportTitle: "Support", contactTitle: "Contact", contactIntro: "If you need help with Anstogo, please contact us by email.", responseTime: "We usually respond within 2 business days.", appInfoTitle: "App Information", appName: "App: Anstogo", developer: "Developer: Huang Xuanning", platforms: "Platforms: iOS and Android",
+        faqTitle: "Frequently Asked Questions", faq1Title: "Why do I need Screen Time permission?", faq1Text: "On iOS, Anstogo uses Apple Screen Time related APIs to apply restrictions to apps, categories, or websites you select.", faq2Title: "How do I unlock an app?", faq2Text: "Open the unlock challenge from Anstogo or from the lock screen flow, answer the required questions, and temporary access will be granted.", faq3Title: "Can I choose difficulty?", faq3Text: "Yes. You can select a difficulty band or choose random difficulty in Settings.", faq4Title: "What is Independent Lock?", faq4Text: "Independent Lock unlocks only the specific app you challenged for. Other locked apps remain restricted.", faq5Title: "What is Heteronomy Mode?", faq5Text: "When enabled, users cannot manually unlock apps from the locked app list, helping reduce impulsive bypassing.", faq6Title: "Why are Pro features unavailable?", faq6Text: "Reopen Anstogo, make sure you are signed in with the same account, and check your subscription status in Settings.",
+        privacyTitle: "Privacy Policy", effectiveDate: "Effective date: April 29, 2026", privacy1Title: "Data We May Process", privacy1Text: "Anstogo may process account information, app settings, selected question banks, study progress, mistakes, subscription status, and support emails you send to us.", privacy2Title: "Screen Time Data", privacy2Text: "On iOS, app and website restrictions are handled through Apple Screen Time related APIs. We use this information only to provide locking and unlocking features.", privacy3Title: "How We Use Data", privacy3Text: "We use data to operate core app features, sync account status, provide Pro access, improve reliability, respond to support requests, and prevent abuse.", privacy4Title: "Purchases", privacy4Text: "In-app purchases are processed by Apple or Google. We receive purchase status information needed to unlock subscription features, but we do not receive full payment card details.", privacy5Title: "Children", privacy5Text: "Anstogo is a productivity and study tool. If you believe a child has provided personal information without appropriate consent, contact us so we can help remove it.", privacy6Title: "Contact About Privacy", privacy6Text: "For privacy questions, corrections, or deletion requests, contact support@anstogo.com.",
+        subscriptionTitle: "Subscription and Pro Features", sub1Title: "Pro Access", sub1Text: "Pro may include advanced explanations, analysis, tips, and other premium study features shown in the app.", sub2Title: "Billing and Cancellation", sub2Text: "Subscriptions are managed by the platform where you purchased them. On iOS, you can manage or cancel subscriptions in your Apple ID subscription settings.", sub3Title: "Refunds", sub3Text: "Refunds for App Store purchases are handled by Apple. If you need a refund, please use Apple’s official report-a-problem flow.",
+        dataTitle: "Account and Data Requests", data1Title: "Request Data Deletion", data1Text: "To request deletion of account-related data, email support@anstogo.com from the email address associated with your account.", data2Title: "Local Data", data2Text: "Some settings, imported files, study records, and cached data may be stored on your device. You can remove local app data by deleting Anstogo from your device.", copyright: "© 2026 Huang Xuanning. All rights reserved."
+      },
+      "zh-Hans": {
+        brandSubtitle: "支持中心", navSupport: "支持", navFaq: "常见问题", navPrivacy: "隐私", navSubscription: "订阅", navData: "数据", languageLabel: "语言",
+        eyebrow: "Anstogo 官方支持", title: "把被锁应用时间变成学习时间。", lead: "Anstogo 通过锁定容易分心的应用或网站，并要求用户完成学习题目后再临时解锁，帮助用户保持专注。", emailButton: "邮件支持", privacyButton: "隐私政策",
+        feature1Title: "屏幕时间锁定", feature1Text: "通过 iOS 屏幕时间能力限制已选择的应用、类别或网站。", feature2Title: "做题解锁", feature2Text: "完成所选题库中的题目，获得临时解锁时间。", feature3Title: "学习回顾", feature3Text: "查看错题、学习时长、做题结果和表现统计。",
+        supportTitle: "技术支持", contactTitle: "联系我们", contactIntro: "如果你在使用 Anstogo 时需要帮助，请通过电子邮件联系我们。", responseTime: "我们通常会在 2 个工作日内回复。", appInfoTitle: "应用信息", appName: "应用：Anstogo", developer: "开发者：Huang Xuanning", platforms: "平台：iOS 和 Android",
+        faqTitle: "常见问题", faq1Title: "为什么需要屏幕时间权限？", faq1Text: "在 iOS 上，Anstogo 使用 Apple 屏幕时间相关 API 对你选择的应用、类别或网站施加限制。", faq2Title: "如何解锁应用？", faq2Text: "从 Anstogo 或锁定流程进入解锁挑战，完成要求的题目后即可获得临时访问权限。", faq3Title: "可以选择难度吗？", faq3Text: "可以。你可以在设置中选择难度分级，也可以选择随机难度。", faq4Title: "什么是独立锁定？", faq4Text: "独立锁定只会解锁你当前挑战的那个应用，其他已锁应用仍保持锁定。", faq5Title: "什么是他律模式？", faq5Text: "开启后，用户不能从已锁应用列表里手动解锁应用，有助于减少冲动绕过。", faq6Title: "为什么 Pro 功能不可用？", faq6Text: "请重新打开 Anstogo，确认你使用同一账户登录，并在设置中检查订阅状态。",
+        privacyTitle: "隐私政策", effectiveDate: "生效日期：2026 年 4 月 29 日", privacy1Title: "我们可能处理的数据", privacy1Text: "Anstogo 可能处理账户信息、应用设置、所选题库、学习进度、错题记录、订阅状态，以及你发送给我们的支持邮件。", privacy2Title: "屏幕时间数据", privacy2Text: "在 iOS 上，应用和网站限制通过 Apple 屏幕时间相关 API 处理。我们仅为提供锁定和解锁功能而使用这些信息。", privacy3Title: "数据用途", privacy3Text: "我们使用数据来运行核心功能、同步账户状态、提供 Pro 权限、提高可靠性、回复支持请求并防止滥用。", privacy4Title: "购买", privacy4Text: "应用内购买由 Apple 或 Google 处理。我们会接收用于解锁订阅功能的购买状态信息，但不会收到完整支付卡信息。", privacy5Title: "儿童", privacy5Text: "Anstogo 是效率和学习工具。如果你认为儿童在未获得适当同意的情况下提供了个人信息，请联系我们协助删除。", privacy6Title: "隐私联系", privacy6Text: "如有隐私问题、更正或删除请求，请联系 support@anstogo.com。",
+        subscriptionTitle: "订阅和 Pro 功能", sub1Title: "Pro 权限", sub1Text: "Pro 可能包含高级解析、选项分析、答题提示以及应用中展示的其他高级学习功能。", sub2Title: "计费与取消", sub2Text: "订阅由你购买时使用的平台管理。在 iOS 上，你可以在 Apple ID 的订阅设置中管理或取消订阅。", sub3Title: "退款", sub3Text: "App Store 购买的退款由 Apple 处理。如需退款，请使用 Apple 官方 report-a-problem 流程。",
+        dataTitle: "账户和数据请求", data1Title: "请求删除数据", data1Text: "如需删除账户相关数据，请使用与你账户关联的邮箱发送邮件至 support@anstogo.com。", data2Title: "本地数据", data2Text: "部分设置、导入文件、学习记录和缓存数据可能存储在你的设备上。删除 Anstogo 可移除本地应用数据。", copyright: "© 2026 Huang Xuanning. 保留所有权利。"
+      }
+    };
+
+    Object.assign(translations, {
+      es: {
+        ...translations.en,
+        brandSubtitle: "Centro de soporte", navSupport: "Soporte", navFaq: "FAQ", navPrivacy: "Privacidad", navSubscription: "Suscripción", navData: "Datos", languageLabel: "Idioma",
+        eyebrow: "Soporte oficial de Anstogo", title: "Convierte el tiempo de apps bloqueadas en tiempo de estudio.", lead: "Anstogo ayuda a los usuarios a mantenerse concentrados bloqueando apps o sitios web distractores y pidiendo preguntas de estudio antes de desbloquear el acceso temporal.", emailButton: "Enviar correo", privacyButton: "Política de privacidad",
+        feature1Title: "Bloqueo con Tiempo en pantalla", feature1Text: "Usa el soporte de Tiempo en pantalla de iOS para restringir apps, categorías o sitios web seleccionados.", feature2Title: "Estudia para desbloquear", feature2Text: "Completa preguntas del banco seleccionado para obtener tiempo de desbloqueo temporal.", feature3Title: "Revisión del progreso", feature3Text: "Revisa errores, tiempo de estudio, resultados e informes de rendimiento.",
+        supportTitle: "Soporte", contactTitle: "Contacto", contactIntro: "Si necesitas ayuda con Anstogo, contáctanos por correo electrónico.", responseTime: "Normalmente respondemos en un plazo de 2 días hábiles.", appInfoTitle: "Información de la app", appName: "App: Anstogo", developer: "Desarrollador: Huang Xuanning", platforms: "Plataformas: iOS y Android",
+        faqTitle: "Preguntas frecuentes", faq1Title: "¿Por qué necesito permiso de Tiempo en pantalla?", faq1Text: "En iOS, Anstogo usa APIs relacionadas con Tiempo en pantalla de Apple para aplicar restricciones a las apps, categorías o sitios web que seleccionas.", faq2Title: "¿Cómo desbloqueo una app?", faq2Text: "Abre el reto de desbloqueo desde Anstogo o desde el flujo de bloqueo, responde las preguntas requeridas y se concederá acceso temporal.", faq3Title: "¿Puedo elegir dificultad?", faq3Text: "Sí. Puedes elegir una banda de dificultad o dificultad aleatoria en Ajustes.", faq4Title: "¿Qué es Bloqueo independiente?", faq4Text: "Bloqueo independiente desbloquea solo la app específica del reto. Las demás apps bloqueadas siguen restringidas.", faq5Title: "¿Qué es el modo de control externo?", faq5Text: "Al activarlo, los usuarios no pueden desbloquear manualmente apps desde la lista, lo que ayuda a reducir saltos impulsivos.", faq6Title: "¿Por qué no están disponibles las funciones Pro?", faq6Text: "Vuelve a abrir Anstogo, asegúrate de iniciar sesión con la misma cuenta y revisa el estado de la suscripción en Ajustes.",
+        privacyTitle: "Política de privacidad", effectiveDate: "Fecha de entrada en vigor: 29 de abril de 2026", privacy1Title: "Datos que podemos procesar", privacy1Text: "Anstogo puede procesar información de cuenta, ajustes de la app, bancos de preguntas seleccionados, progreso, errores, estado de suscripción y correos de soporte.", privacy2Title: "Datos de Tiempo en pantalla", privacy2Text: "En iOS, las restricciones de apps y sitios web se gestionan mediante APIs relacionadas con Tiempo en pantalla de Apple. Usamos esta información solo para funciones de bloqueo y desbloqueo.", privacy3Title: "Cómo usamos los datos", privacy3Text: "Usamos datos para operar funciones principales, sincronizar el estado de cuenta, proporcionar acceso Pro, mejorar la fiabilidad, responder soporte y prevenir abusos.", privacy4Title: "Compras", privacy4Text: "Las compras dentro de la app son procesadas por Apple o Google. Recibimos el estado de compra necesario para desbloquear funciones, pero no datos completos de tarjeta.", privacy5Title: "Menores", privacy5Text: "Anstogo es una herramienta de productividad y estudio. Si crees que un menor proporcionó datos sin consentimiento adecuado, contáctanos para ayudar a eliminarlos.", privacy6Title: "Contacto de privacidad", privacy6Text: "Para preguntas de privacidad, correcciones o solicitudes de eliminación, contacta a support@anstogo.com.",
+        subscriptionTitle: "Suscripción y funciones Pro", sub1Title: "Acceso Pro", sub1Text: "Pro puede incluir explicaciones avanzadas, análisis, consejos y otras funciones premium mostradas en la app.", sub2Title: "Facturación y cancelación", sub2Text: "Las suscripciones se gestionan en la plataforma donde se compraron. En iOS, puedes gestionarlas o cancelarlas desde los ajustes de suscripciones de tu Apple ID.", sub3Title: "Reembolsos", sub3Text: "Los reembolsos de compras de App Store son gestionados por Apple. Usa el flujo oficial de report-a-problem de Apple.",
+        dataTitle: "Solicitudes de cuenta y datos", data1Title: "Solicitar eliminación de datos", data1Text: "Para solicitar la eliminación de datos relacionados con la cuenta, escribe a support@anstogo.com desde el correo asociado a tu cuenta.", data2Title: "Datos locales", data2Text: "Algunos ajustes, archivos importados, registros de estudio y caché pueden guardarse en tu dispositivo. Puedes eliminar datos locales borrando Anstogo del dispositivo.", copyright: "© 2026 Huang Xuanning. Todos los derechos reservados."
+      },
+      fr: {
+        ...translations.en,
+        brandSubtitle: "Centre d’assistance", navSupport: "Assistance", navFaq: "FAQ", navPrivacy: "Confidentialité", navSubscription: "Abonnement", navData: "Données", languageLabel: "Langue",
+        eyebrow: "Assistance officielle Anstogo", title: "Transformez le temps d’apps bloquées en temps d’étude.", lead: "Anstogo aide à rester concentré en verrouillant les apps ou sites distrayants et en demandant des questions d’étude avant un déverrouillage temporaire.", emailButton: "Contacter l’assistance", privacyButton: "Politique de confidentialité",
+        feature1Title: "Verrouillage Temps d’écran", feature1Text: "Utilisez le support Temps d’écran d’iOS pour restreindre les apps, catégories ou sites web sélectionnés.", feature2Title: "Étudier pour déverrouiller", feature2Text: "Répondez aux questions de votre banque sélectionnée pour gagner du temps de déverrouillage temporaire.", feature3Title: "Suivi des progrès", feature3Text: "Consultez les erreurs, le temps d’étude, les résultats et les analyses de performance.",
+        supportTitle: "Assistance", contactTitle: "Contact", contactIntro: "Si vous avez besoin d’aide avec Anstogo, contactez-nous par e-mail.", responseTime: "Nous répondons généralement sous 2 jours ouvrés.", appInfoTitle: "Informations sur l’app", appName: "App : Anstogo", developer: "Développeur : Huang Xuanning", platforms: "Plateformes : iOS et Android",
+        faqTitle: "Questions fréquentes", faq1Title: "Pourquoi l’autorisation Temps d’écran est-elle nécessaire ?", faq1Text: "Sur iOS, Anstogo utilise les API liées à Temps d’écran d’Apple pour appliquer des restrictions aux apps, catégories ou sites web sélectionnés.", faq2Title: "Comment déverrouiller une app ?", faq2Text: "Ouvrez le défi depuis Anstogo ou le flux de verrouillage, répondez aux questions requises et un accès temporaire sera accordé.", faq3Title: "Puis-je choisir la difficulté ?", faq3Text: "Oui. Vous pouvez choisir un niveau de difficulté ou une difficulté aléatoire dans les réglages.", faq4Title: "Qu’est-ce que le verrouillage indépendant ?", faq4Text: "Il déverrouille uniquement l’app concernée par le défi. Les autres apps restent restreintes.", faq5Title: "Qu’est-ce que le mode d’autocontrôle renforcé ?", faq5Text: "Une fois activé, l’utilisateur ne peut pas déverrouiller manuellement les apps depuis la liste, ce qui limite les contournements impulsifs.", faq6Title: "Pourquoi les fonctions Pro sont-elles indisponibles ?", faq6Text: "Rouvrez Anstogo, vérifiez que vous utilisez le même compte et consultez l’état de l’abonnement dans les réglages.",
+        privacyTitle: "Politique de confidentialité", effectiveDate: "Date d’entrée en vigueur : 29 avril 2026", privacy1Title: "Données que nous pouvons traiter", privacy1Text: "Anstogo peut traiter les informations de compte, réglages, banques de questions sélectionnées, progrès, erreurs, état d’abonnement et e-mails de support.", privacy2Title: "Données Temps d’écran", privacy2Text: "Sur iOS, les restrictions d’apps et de sites sont gérées par les API liées à Temps d’écran d’Apple. Ces informations servent uniquement au verrouillage et au déverrouillage.", privacy3Title: "Utilisation des données", privacy3Text: "Nous utilisons les données pour faire fonctionner l’app, synchroniser le compte, fournir Pro, améliorer la fiabilité, répondre au support et prévenir les abus.", privacy4Title: "Achats", privacy4Text: "Les achats intégrés sont traités par Apple ou Google. Nous recevons l’état d’achat nécessaire aux fonctions d’abonnement, mais pas les données complètes de carte.", privacy5Title: "Enfants", privacy5Text: "Anstogo est un outil de productivité et d’étude. Si un enfant a fourni des informations sans consentement approprié, contactez-nous pour aider à les supprimer.", privacy6Title: "Contact confidentialité", privacy6Text: "Pour toute question, correction ou demande de suppression, contactez support@anstogo.com.",
+        subscriptionTitle: "Abonnement et fonctions Pro", sub1Title: "Accès Pro", sub1Text: "Pro peut inclure des explications avancées, analyses, conseils et autres fonctions premium affichées dans l’app.", sub2Title: "Facturation et annulation", sub2Text: "Les abonnements sont gérés par la plateforme d’achat. Sur iOS, vous pouvez les gérer ou les annuler dans les réglages d’abonnement de votre Apple ID.", sub3Title: "Remboursements", sub3Text: "Les remboursements App Store sont gérés par Apple via son flux officiel report-a-problem.",
+        dataTitle: "Demandes de compte et données", data1Title: "Demander la suppression", data1Text: "Pour demander la suppression de données liées au compte, envoyez un e-mail à support@anstogo.com depuis l’adresse associée au compte.", data2Title: "Données locales", data2Text: "Certains réglages, fichiers importés, historiques d’étude et caches peuvent être stockés sur votre appareil. Supprimez Anstogo pour retirer les données locales.", copyright: "© 2026 Huang Xuanning. Tous droits réservés."
+      },
+      de: {
+        ...translations.en,
+        brandSubtitle: "Support Center", navSupport: "Support", navFaq: "FAQ", navPrivacy: "Datenschutz", navSubscription: "Abo", navData: "Daten", languageLabel: "Sprache",
+        eyebrow: "Offizieller Support für Anstogo", title: "Mach aus gesperrter App-Zeit Lernzeit.", lead: "Anstogo hilft dir, fokussiert zu bleiben, indem ablenkende Apps oder Websites gesperrt werden und vor temporärem Zugriff Lernfragen beantwortet werden müssen.", emailButton: "Support kontaktieren", privacyButton: "Datenschutzrichtlinie",
+        feature1Title: "Bildschirmzeit-Sperre", feature1Text: "Nutze iOS-Bildschirmzeit-Unterstützung, um ausgewählte Apps, Kategorien oder Websites einzuschränken.", feature2Title: "Lernen zum Entsperren", feature2Text: "Beantworte Fragen aus deiner ausgewählten Fragendatenbank, um temporäre Entsperrzeit zu erhalten.", feature3Title: "Fortschritt prüfen", feature3Text: "Prüfe Fehler, Lernzeit, Ergebnisse und Leistungsanalysen.",
+        supportTitle: "Support", contactTitle: "Kontakt", contactIntro: "Wenn du Hilfe mit Anstogo brauchst, kontaktiere uns per E-Mail.", responseTime: "Wir antworten normalerweise innerhalb von 2 Werktagen.", appInfoTitle: "App-Informationen", appName: "App: Anstogo", developer: "Entwickler: Huang Xuanning", platforms: "Plattformen: iOS und Android",
+        faqTitle: "Häufige Fragen", faq1Title: "Warum brauche ich Bildschirmzeit-Berechtigung?", faq1Text: "Unter iOS nutzt Anstogo Apple-APIs im Zusammenhang mit Bildschirmzeit, um Einschränkungen für ausgewählte Apps, Kategorien oder Websites anzuwenden.", faq2Title: "Wie entsperre ich eine App?", faq2Text: "Öffne die Entsperr-Challenge in Anstogo oder im Sperrablauf, beantworte die erforderlichen Fragen und temporärer Zugriff wird gewährt.", faq3Title: "Kann ich die Schwierigkeit wählen?", faq3Text: "Ja. Du kannst in den Einstellungen eine Schwierigkeit oder zufällige Schwierigkeit wählen.", faq4Title: "Was ist unabhängige Sperre?", faq4Text: "Sie entsperrt nur die konkrete App, für die du die Challenge gemacht hast. Andere Apps bleiben gesperrt.", faq5Title: "Was ist Heteronomie-Modus?", faq5Text: "Ist er aktiv, können Apps nicht manuell aus der Sperrliste entsperrt werden. Das reduziert impulsives Umgehen.", faq6Title: "Warum sind Pro-Funktionen nicht verfügbar?", faq6Text: "Öffne Anstogo erneut, stelle sicher, dass du mit demselben Konto angemeldet bist, und prüfe den Abostatus in den Einstellungen.",
+        privacyTitle: "Datenschutzrichtlinie", effectiveDate: "Gültig ab: 29. April 2026", privacy1Title: "Daten, die wir verarbeiten können", privacy1Text: "Anstogo kann Kontoinformationen, App-Einstellungen, ausgewählte Fragendatenbanken, Lernfortschritt, Fehler, Abostatus und Support-E-Mails verarbeiten.", privacy2Title: "Bildschirmzeit-Daten", privacy2Text: "Unter iOS werden App- und Website-Einschränkungen über Apple-APIs im Zusammenhang mit Bildschirmzeit verarbeitet. Wir nutzen diese Informationen nur für Sperr- und Entsperrfunktionen.", privacy3Title: "Wie wir Daten nutzen", privacy3Text: "Wir nutzen Daten, um Kernfunktionen zu betreiben, Kontostatus zu synchronisieren, Pro bereitzustellen, Zuverlässigkeit zu verbessern, Support zu leisten und Missbrauch zu verhindern.", privacy4Title: "Käufe", privacy4Text: "In-App-Käufe werden von Apple oder Google verarbeitet. Wir erhalten den Kaufstatus, aber keine vollständigen Zahlungskartendaten.", privacy5Title: "Kinder", privacy5Text: "Anstogo ist ein Produktivitäts- und Lerntool. Wenn ein Kind personenbezogene Daten ohne passende Zustimmung bereitgestellt hat, kontaktiere uns zur Löschung.", privacy6Title: "Datenschutzkontakt", privacy6Text: "Für Datenschutzfragen, Korrekturen oder Löschanfragen kontaktiere support@anstogo.com.",
+        subscriptionTitle: "Abo und Pro-Funktionen", sub1Title: "Pro-Zugang", sub1Text: "Pro kann erweiterte Erklärungen, Analysen, Tipps und weitere Premium-Lernfunktionen enthalten.", sub2Title: "Abrechnung und Kündigung", sub2Text: "Abos werden über die Kaufplattform verwaltet. Unter iOS kannst du sie in den Apple-ID-Abonnementeinstellungen verwalten oder kündigen.", sub3Title: "Erstattungen", sub3Text: "Erstattungen für App-Store-Käufe werden von Apple über den offiziellen report-a-problem-Ablauf bearbeitet.",
+        dataTitle: "Konto- und Datenanfragen", data1Title: "Datenlöschung beantragen", data1Text: "Sende zur Löschung kontobezogener Daten eine E-Mail von der mit deinem Konto verbundenen Adresse an support@anstogo.com.", data2Title: "Lokale Daten", data2Text: "Einige Einstellungen, importierte Dateien, Lernaufzeichnungen und Caches können auf deinem Gerät gespeichert sein. Durch Löschen von Anstogo entfernst du lokale App-Daten.", copyright: "© 2026 Huang Xuanning. Alle Rechte vorbehalten."
+      },
+      ja: {
+        ...translations.en,
+        brandSubtitle: "サポートセンター", navSupport: "サポート", navFaq: "FAQ", navPrivacy: "プライバシー", navSubscription: "サブスクリプション", navData: "データ", languageLabel: "言語",
+        eyebrow: "Anstogo 公式サポート", title: "ロックされたアプリ時間を学習時間へ。", lead: "Anstogo は、気が散るアプリやウェブサイトをロックし、一時的にアクセスする前に学習問題への回答を求めることで集中を支援します。", emailButton: "メールで問い合わせ", privacyButton: "プライバシーポリシー",
+        feature1Title: "スクリーンタイムロック", feature1Text: "iOS のスクリーンタイム機能を使い、選択したアプリ、カテゴリ、ウェブサイトを制限します。", feature2Title: "学習して解除", feature2Text: "選択した問題バンクの問題を解き、一時的な解除時間を獲得します。", feature3Title: "進捗確認", feature3Text: "ミス、学習時間、回答結果、パフォーマンスを確認できます。",
+        supportTitle: "サポート", contactTitle: "お問い合わせ", contactIntro: "Anstogo についてサポートが必要な場合は、メールでご連絡ください。", responseTime: "通常 2 営業日以内に返信します。", appInfoTitle: "アプリ情報", appName: "アプリ：Anstogo", developer: "開発者：Huang Xuanning", platforms: "対応：iOS と Android",
+        faqTitle: "よくある質問", faq1Title: "なぜスクリーンタイム権限が必要ですか？", faq1Text: "iOS では、Anstogo は Apple のスクリーンタイム関連 API を使い、選択したアプリ、カテゴリ、ウェブサイトに制限を適用します。", faq2Title: "アプリを解除するには？", faq2Text: "Anstogo またはロック画面の流れから解除チャレンジを開き、必要な問題に回答すると一時アクセスが付与されます。", faq3Title: "難易度は選べますか？", faq3Text: "はい。設定で難易度帯またはランダム難易度を選択できます。", faq4Title: "独立ロックとは？", faq4Text: "チャレンジした特定のアプリのみを解除します。他のロック済みアプリは制限されたままです。", faq5Title: "他律モードとは？", faq5Text: "有効にすると、ロック済みアプリ一覧から手動で解除できなくなり、衝動的な回避を減らせます。", faq6Title: "Pro 機能が使えないのはなぜ？", faq6Text: "Anstogo を再度開き、同じアカウントでログインしていることを確認し、設定でサブスクリプション状態を確認してください。",
+        privacyTitle: "プライバシーポリシー", effectiveDate: "施行日：2026年4月29日", privacy1Title: "処理する可能性のあるデータ", privacy1Text: "Anstogo は、アカウント情報、アプリ設定、選択した問題バンク、学習進捗、ミス、サブスクリプション状態、サポートメールを処理する場合があります。", privacy2Title: "スクリーンタイムデータ", privacy2Text: "iOS では、アプリとウェブサイトの制限は Apple のスクリーンタイム関連 API により処理されます。この情報はロックと解除機能の提供にのみ使用します。", privacy3Title: "データの利用目的", privacy3Text: "コア機能の運用、アカウント状態の同期、Pro 提供、信頼性向上、サポート対応、不正防止に利用します。", privacy4Title: "購入", privacy4Text: "アプリ内購入は Apple または Google により処理されます。サブスクリプション機能に必要な購入状態は受け取りますが、完全なカード情報は受け取りません。", privacy5Title: "子ども", privacy5Text: "Anstogo は生産性と学習のためのツールです。適切な同意なく子どもが個人情報を提供したと思われる場合は、削除支援のためご連絡ください。", privacy6Title: "プライバシー連絡先", privacy6Text: "プライバシーに関する質問、訂正、削除依頼は support@anstogo.com までご連絡ください。",
+        subscriptionTitle: "サブスクリプションと Pro 機能", sub1Title: "Pro アクセス", sub1Text: "Pro には高度な解説、分析、ヒント、その他アプリ内のプレミアム学習機能が含まれる場合があります。", sub2Title: "請求と解約", sub2Text: "サブスクリプションは購入したプラットフォームで管理されます。iOS では Apple ID のサブスクリプション設定で管理または解約できます。", sub3Title: "返金", sub3Text: "App Store 購入の返金は Apple が処理します。Apple 公式の report-a-problem を利用してください。",
+        dataTitle: "アカウントとデータのリクエスト", data1Title: "データ削除を依頼する", data1Text: "アカウント関連データの削除を依頼するには、アカウントに関連付けられたメールアドレスから support@anstogo.com にご連絡ください。", data2Title: "ローカルデータ", data2Text: "一部の設定、インポートファイル、学習記録、キャッシュは端末に保存される場合があります。Anstogo を削除するとローカルデータを削除できます。", copyright: "© 2026 Huang Xuanning. All rights reserved."
+      },
+      ko: {
+        ...translations.en,
+        brandSubtitle: "지원 센터", navSupport: "지원", navFaq: "FAQ", navPrivacy: "개인정보", navSubscription: "구독", navData: "데이터", languageLabel: "언어",
+        eyebrow: "Anstogo 공식 지원", title: "잠긴 앱 시간을 학습 시간으로 바꾸세요.", lead: "Anstogo는 방해되는 앱이나 웹사이트를 잠그고 임시 접근 전에 학습 문제를 풀도록 하여 집중을 돕습니다.", emailButton: "이메일 지원", privacyButton: "개인정보 처리방침",
+        feature1Title: "스크린 타임 잠금", feature1Text: "iOS 스크린 타임 지원을 사용해 선택한 앱, 카테고리 또는 웹사이트를 제한합니다.", feature2Title: "공부해서 잠금 해제", feature2Text: "선택한 문제 은행의 문제를 풀어 임시 잠금 해제 시간을 얻습니다.", feature3Title: "진행 상황 확인", feature3Text: "오답, 학습 시간, 문제 결과와 성과 분석을 확인합니다.",
+        supportTitle: "지원", contactTitle: "문의", contactIntro: "Anstogo 사용 중 도움이 필요하면 이메일로 문의해 주세요.", responseTime: "보통 영업일 기준 2일 이내에 답변합니다.", appInfoTitle: "앱 정보", appName: "앱: Anstogo", developer: "개발자: Huang Xuanning", platforms: "플랫폼: iOS 및 Android",
+        faqTitle: "자주 묻는 질문", faq1Title: "왜 스크린 타임 권한이 필요한가요?", faq1Text: "iOS에서 Anstogo는 Apple 스크린 타임 관련 API를 사용하여 선택한 앱, 카테고리 또는 웹사이트에 제한을 적용합니다.", faq2Title: "앱은 어떻게 잠금 해제하나요?", faq2Text: "Anstogo 또는 잠금 화면 흐름에서 해제 챌린지를 열고 필요한 문제를 풀면 임시 접근 권한이 부여됩니다.", faq3Title: "난이도를 선택할 수 있나요?", faq3Text: "네. 설정에서 난이도 구간 또는 랜덤 난이도를 선택할 수 있습니다.", faq4Title: "독립 잠금이란?", faq4Text: "챌린지한 특정 앱만 해제됩니다. 다른 잠긴 앱은 계속 제한됩니다.", faq5Title: "타율 모드란?", faq5Text: "활성화하면 잠긴 앱 목록에서 수동으로 앱을 해제할 수 없어 충동적인 우회를 줄일 수 있습니다.", faq6Title: "Pro 기능을 사용할 수 없는 이유는?", faq6Text: "Anstogo를 다시 열고 같은 계정으로 로그인했는지 확인한 뒤 설정에서 구독 상태를 확인하세요.",
+        privacyTitle: "개인정보 처리방침", effectiveDate: "시행일: 2026년 4월 29일", privacy1Title: "처리할 수 있는 데이터", privacy1Text: "Anstogo는 계정 정보, 앱 설정, 선택한 문제 은행, 학습 진행, 오답, 구독 상태 및 지원 이메일을 처리할 수 있습니다.", privacy2Title: "스크린 타임 데이터", privacy2Text: "iOS에서 앱 및 웹사이트 제한은 Apple 스크린 타임 관련 API를 통해 처리됩니다. 이 정보는 잠금 및 해제 기능 제공에만 사용됩니다.", privacy3Title: "데이터 사용 방식", privacy3Text: "핵심 기능 운영, 계정 상태 동기화, Pro 제공, 안정성 개선, 지원 응답 및 남용 방지를 위해 데이터를 사용합니다.", privacy4Title: "구매", privacy4Text: "앱 내 구매는 Apple 또는 Google이 처리합니다. 구독 기능에 필요한 구매 상태는 수신하지만 전체 결제 카드 정보는 받지 않습니다.", privacy5Title: "아동", privacy5Text: "Anstogo는 생산성 및 학습 도구입니다. 아동이 적절한 동의 없이 개인정보를 제공했다고 생각되면 삭제 지원을 위해 문의해 주세요.", privacy6Title: "개인정보 문의", privacy6Text: "개인정보 질문, 수정 또는 삭제 요청은 support@anstogo.com으로 문의하세요.",
+        subscriptionTitle: "구독 및 Pro 기능", sub1Title: "Pro 접근", sub1Text: "Pro에는 고급 설명, 분석, 팁 및 앱에 표시되는 기타 프리미엄 학습 기능이 포함될 수 있습니다.", sub2Title: "결제 및 취소", sub2Text: "구독은 구매한 플랫폼에서 관리됩니다. iOS에서는 Apple ID 구독 설정에서 관리하거나 취소할 수 있습니다.", sub3Title: "환불", sub3Text: "App Store 구매 환불은 Apple에서 처리합니다. Apple의 공식 report-a-problem 절차를 이용하세요.",
+        dataTitle: "계정 및 데이터 요청", data1Title: "데이터 삭제 요청", data1Text: "계정 관련 데이터 삭제를 요청하려면 계정에 연결된 이메일 주소로 support@anstogo.com에 메일을 보내 주세요.", data2Title: "로컬 데이터", data2Text: "일부 설정, 가져온 파일, 학습 기록 및 캐시가 기기에 저장될 수 있습니다. Anstogo를 삭제하면 로컬 앱 데이터를 제거할 수 있습니다.", copyright: "© 2026 Huang Xuanning. All rights reserved."
+      },
+      pt: {
+        ...translations.en,
+        brandSubtitle: "Central de suporte", navSupport: "Suporte", navFaq: "FAQ", navPrivacy: "Privacidade", navSubscription: "Assinatura", navData: "Dados", languageLabel: "Idioma",
+        eyebrow: "Suporte oficial do Anstogo", title: "Transforme tempo de apps bloqueados em tempo de estudo.", lead: "Anstogo ajuda usuários a manter o foco bloqueando apps ou sites distrativos e exigindo perguntas de estudo antes do acesso temporário.", emailButton: "Enviar e-mail", privacyButton: "Política de privacidade",
+        feature1Title: "Bloqueio por Tempo de Uso", feature1Text: "Use o suporte de Tempo de Uso do iOS para restringir apps, categorias ou sites selecionados.", feature2Title: "Estude para desbloquear", feature2Text: "Responda perguntas do banco selecionado para ganhar tempo de desbloqueio temporário.", feature3Title: "Revisão de progresso", feature3Text: "Revise erros, tempo de estudo, resultados e insights de desempenho.",
+        supportTitle: "Suporte", contactTitle: "Contato", contactIntro: "Se precisar de ajuda com o Anstogo, entre em contato por e-mail.", responseTime: "Normalmente respondemos em até 2 dias úteis.", appInfoTitle: "Informações do app", appName: "App: Anstogo", developer: "Desenvolvedor: Huang Xuanning", platforms: "Plataformas: iOS e Android",
+        faqTitle: "Perguntas frequentes", faq1Title: "Por que preciso da permissão de Tempo de Uso?", faq1Text: "No iOS, o Anstogo usa APIs relacionadas ao Tempo de Uso da Apple para aplicar restrições aos apps, categorias ou sites selecionados.", faq2Title: "Como desbloqueio um app?", faq2Text: "Abra o desafio pelo Anstogo ou pelo fluxo de bloqueio, responda às perguntas necessárias e o acesso temporário será concedido.", faq3Title: "Posso escolher a dificuldade?", faq3Text: "Sim. Você pode escolher uma faixa de dificuldade ou dificuldade aleatória em Ajustes.", faq4Title: "O que é Bloqueio independente?", faq4Text: "Ele desbloqueia apenas o app específico do desafio. Outros apps bloqueados continuam restritos.", faq5Title: "O que é Modo de heteronomia?", faq5Text: "Quando ativado, o usuário não pode desbloquear apps manualmente pela lista, ajudando a reduzir desvios impulsivos.", faq6Title: "Por que os recursos Pro não estão disponíveis?", faq6Text: "Reabra o Anstogo, verifique se entrou com a mesma conta e confira o status da assinatura em Ajustes.",
+        privacyTitle: "Política de privacidade", effectiveDate: "Data de vigência: 29 de abril de 2026", privacy1Title: "Dados que podemos processar", privacy1Text: "Anstogo pode processar informações da conta, ajustes do app, bancos de questões selecionados, progresso de estudo, erros, status da assinatura e e-mails de suporte.", privacy2Title: "Dados de Tempo de Uso", privacy2Text: "No iOS, restrições de apps e sites são tratadas por APIs relacionadas ao Tempo de Uso da Apple. Usamos essas informações apenas para bloqueio e desbloqueio.", privacy3Title: "Como usamos os dados", privacy3Text: "Usamos dados para operar funções principais, sincronizar status da conta, fornecer Pro, melhorar confiabilidade, responder suporte e evitar abuso.", privacy4Title: "Compras", privacy4Text: "Compras no app são processadas pela Apple ou Google. Recebemos o status necessário para liberar recursos, mas não dados completos do cartão.", privacy5Title: "Crianças", privacy5Text: "Anstogo é uma ferramenta de produtividade e estudo. Se você acredita que uma criança forneceu dados sem consentimento adequado, contate-nos para ajudar a removê-los.", privacy6Title: "Contato sobre privacidade", privacy6Text: "Para dúvidas, correções ou pedidos de exclusão, contate support@anstogo.com.",
+        subscriptionTitle: "Assinatura e recursos Pro", sub1Title: "Acesso Pro", sub1Text: "Pro pode incluir explicações avançadas, análises, dicas e outros recursos premium exibidos no app.", sub2Title: "Cobrança e cancelamento", sub2Text: "Assinaturas são gerenciadas pela plataforma de compra. No iOS, você pode gerenciar ou cancelar nas configurações de assinaturas do Apple ID.", sub3Title: "Reembolsos", sub3Text: "Reembolsos de compras da App Store são tratados pela Apple. Use o fluxo oficial report-a-problem da Apple.",
+        dataTitle: "Solicitações de conta e dados", data1Title: "Solicitar exclusão de dados", data1Text: "Para solicitar exclusão de dados relacionados à conta, envie e-mail para support@anstogo.com usando o endereço associado à conta.", data2Title: "Dados locais", data2Text: "Alguns ajustes, arquivos importados, registros de estudo e cache podem ficar no dispositivo. Excluir o Anstogo remove os dados locais.", copyright: "© 2026 Huang Xuanning. Todos os direitos reservados."
+      }
+    });
+
+    const select = document.getElementById("language");
+    const savedLanguage = localStorage.getItem("anstogo_support_language");
+    const browserLanguage = navigator.language || "en";
+    const initialLanguage = savedLanguage || (
+      browserLanguage.startsWith("zh") ? "zh-Hans" :
+      browserLanguage.startsWith("es") ? "es" :
+      browserLanguage.startsWith("fr") ? "fr" :
+      browserLanguage.startsWith("de") ? "de" :
+      browserLanguage.startsWith("ja") ? "ja" :
+      browserLanguage.startsWith("ko") ? "ko" :
+      browserLanguage.startsWith("pt") ? "pt" :
+      "en"
+    );
+
+    function applyLanguage(language) {
+      const strings = translations[language] || translations.en;
+      document.documentElement.lang = language;
+      document.title = strings.brandSubtitle ? `Anstogo ${strings.brandSubtitle}` : "Anstogo Support";
+      select.value = translations[language] ? language : "en";
+      document.querySelectorAll("[data-i18n]").forEach((element) => {
+        const key = element.getAttribute("data-i18n");
+        if (strings[key]) {
+          element.textContent = strings[key];
+        }
+      });
+      localStorage.setItem("anstogo_support_language", select.value);
+    }
+
+    select.addEventListener("change", (event) => {
+      applyLanguage(event.target.value);
+    });
+
+    applyLanguage(initialLanguage);
+  </script>
+</body>
+</html>
